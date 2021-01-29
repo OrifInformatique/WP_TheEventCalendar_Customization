@@ -144,7 +144,8 @@ class Tribe__Events__List_Widget extends WP_Widget {
 				'post_status' => $post_status,
 				'tribe_render_context' => 'widget',
 				'featured' => empty( $instance['featured_events_only'] ) ? null : (bool) $instance['featured_events_only'],
-				'ends_after' => Dates::build_date_object( 'now' ),
+				'ends_after' => Dates::build_date_object( '2000-01-01' ),
+				'order' => 'DESC'
 			]
 		);
 
