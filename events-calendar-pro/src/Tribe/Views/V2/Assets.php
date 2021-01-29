@@ -87,6 +87,74 @@ class Assets extends \tad_DI52_ServiceProvider {
 
 		tribe_asset(
 			$plugin,
+			'tribe-events-pro-widgets-v2-events-list-skeleton',
+			'widget-events-list-skeleton.css',
+			[
+				'tribe-events-widgets-v2-events-list-skeleton',
+			],
+			null,
+			[
+				'priority' => 15,
+			]
+		);
+
+		tribe_asset(
+			$plugin,
+			'tribe-events-pro-widgets-v2-events-list-full',
+			'widget-events-list-full.css',
+			[
+				'tribe-events-widgets-v2-events-list-full',
+				'tribe-events-pro-widgets-v2-events-list-skeleton',
+			],
+			null,
+			[
+				'priority' => 15,
+			]
+		);
+
+		tribe_asset(
+			$plugin,
+			'tribe-events-pro-widgets-v2-countdown-skeleton',
+			'widget-countdown-skeleton.css',
+			[
+				'tribe-common-skeleton-style',
+			],
+			null,
+			[
+				'priority' => 15,
+			]
+		);
+
+		tribe_asset(
+			$plugin,
+			'tribe-events-pro-widgets-v2-countdown-full',
+			'widget-countdown-full.css',
+			[
+				'tribe-events-pro-widgets-v2-countdown-skeleton',
+				'tribe-common-full-style',
+			],
+			null,
+			[
+				'priority' => 15,
+			]
+		);
+
+		tribe_asset(
+			$plugin,
+			'tribe-events-pro-widgets-v2-countdown',
+			'views/widget-countdown.js',
+			[
+				'jquery',
+				'tribe-common',
+			],
+			null,
+			[
+				'priority' => 15,
+			]
+		);
+
+		tribe_asset(
+			$plugin,
 			'tribe-events-pro-views-v2-nanoscroller',
 			'vendor/nanoscroller/jquery.nanoscroller.js',
 			[ 'jquery-ui-draggable' ],

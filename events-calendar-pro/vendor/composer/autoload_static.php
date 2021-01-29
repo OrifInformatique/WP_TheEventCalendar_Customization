@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit976c4c37c9d89bba5156f6cca43bf135
+class ComposerStaticInitc789d210b22a77605c055c6d86b48955
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -28,6 +28,7 @@ class ComposerStaticInit976c4c37c9d89bba5156f6cca43bf135
         'Tribe\\Events\\Pro\\Rewrite\\Rewrite' => __DIR__ . '/../..' . '/src/Tribe/Rewrite/Rewrite.php',
         'Tribe\\Events\\Pro\\Service_Providers\\Customizer' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Customizer.php',
         'Tribe\\Events\\Pro\\Views\\V2\\Assets' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Assets.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Customizer' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Customizer.php',
         'Tribe\\Events\\Pro\\Views\\V2\\Geo_Loc\\Base_Handler' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Geo_Loc/Base_Handler.php',
         'Tribe\\Events\\Pro\\Views\\V2\\Geo_Loc\\Geocoding_Handler' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Geo_Loc/Geocoding_Handler.php',
         'Tribe\\Events\\Pro\\Views\\V2\\Geo_Loc\\Handler_Interface' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Geo_Loc/Handler_Interface.php',
@@ -60,14 +61,22 @@ class ComposerStaticInit976c4c37c9d89bba5156f6cca43bf135
         'Tribe\\Events\\Pro\\Views\\V2\\Views\\Photo_View' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Views/Photo_View.php',
         'Tribe\\Events\\Pro\\Views\\V2\\Views\\Venue_View' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Views/Venue_View.php',
         'Tribe\\Events\\Pro\\Views\\V2\\Views\\Week_View' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Views/Week_View.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Views\\Widgets\\Countdown_View' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Views/Widgets/Countdown_View.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Admin_Template' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Admin_Template.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Ajax' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Ajax.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Hooks' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Hooks.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Service_Provider.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Taxonomy_Filter' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Taxonomy_Filter.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Widget_Advanced_List' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Widget_Advanced_List.php',
+        'Tribe\\Events\\Pro\\Views\\V2\\Widgets\\Widget_Countdown' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Widget_Countdown.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit976c4c37c9d89bba5156f6cca43bf135::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit976c4c37c9d89bba5156f6cca43bf135::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit976c4c37c9d89bba5156f6cca43bf135::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc789d210b22a77605c055c6d86b48955::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc789d210b22a77605c055c6d86b48955::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc789d210b22a77605c055c6d86b48955::$classMap;
 
         }, null, ClassLoader::class);
     }
