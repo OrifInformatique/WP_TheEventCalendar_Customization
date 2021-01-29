@@ -15,7 +15,7 @@ use Tribe__Date_Utils as Dates;
 class Tribe__Events__List_Widget extends WP_Widget {
 
 	private static $limit = 5;
-	public static $posts = array();
+	public static $posts = [];
 
 	/**
 	 * Allows widgets extending this one to pass through their own unique name, ID base etc.
@@ -25,16 +25,16 @@ class Tribe__Events__List_Widget extends WP_Widget {
 	 * @param array  $widget_options
 	 * @param array  $control_options
 	 */
-	public function __construct( $id_base = '', $name = '', $widget_options = array(), $control_options = array() ) {
+	public function __construct( $id_base = '', $name = '', $widget_options = [], $control_options = [] ) {
 		$widget_options = array_merge(
-			array(
+			[
 				'classname'   => 'tribe-events-list-widget',
 				'description' => esc_html__( 'A widget that displays upcoming events.', 'the-events-calendar' ),
-			),
+			],
 			$widget_options
 		);
 
-		$control_options = array_merge( array( 'id_base' => 'tribe-events-list-widget' ), $control_options );
+		$control_options = array_merge( [ 'id_base' => 'tribe-events-list-widget' ], $control_options );
 
 		$id_base = empty( $id_base ) ? 'tribe-events-list-widget' : $id_base;
 		$name    = empty( $name ) ? esc_html__( 'Events List', 'the-events-calendar' ) : $name;
@@ -43,7 +43,7 @@ class Tribe__Events__List_Widget extends WP_Widget {
 
 		// Do not enqueue if the widget is inactive
 		if ( is_active_widget( false, false, 'tribe-events-list-widget', true ) || is_customize_preview() ) {
-			add_action( 'tribe_events_widget_render', array( $this, 'enqueue_widget_styles' ), 100 );
+			add_action( 'tribe_events_widget_render', [ $this, 'enqueue_widget_styles' ], 100 );
 		}
 	}
 
@@ -78,10 +78,10 @@ class Tribe__Events__List_Widget extends WP_Widget {
 		}
 
 		$instance = wp_parse_args(
-			$instance, array(
+			$instance, [
 				'limit' => self::$limit,
 				'title' => '',
-			)
+			]
 		);
 
 		/**
@@ -114,7 +114,7 @@ class Tribe__Events__List_Widget extends WP_Widget {
 		}
 
 		// Temporarily unset the tribe bar params so they don't apply
-		$hold_tribe_bar_args = array();
+		$hold_tribe_bar_args = [];
 		foreach ( $_REQUEST as $key => $value ) {
 			if ( $value && strpos( $key, 'tribe-bar-' ) === 0 ) {
 				$hold_tribe_bar_args[ $key ] = $value;
@@ -144,7 +144,9 @@ class Tribe__Events__List_Widget extends WP_Widget {
 				'post_status' => $post_status,
 				'tribe_render_context' => 'widget',
 				'featured' => empty( $instance['featured_events_only'] ) ? null : (bool) $instance['featured_events_only'],
-				'ends_after' => Dates::build_date_object( 'now' ),
+				'ends_after' => Dates::build_date_object( '2000-01-01' ),
+				// 'starts_after' => Dates::build_date_object( '2000-01-01' ),
+				'order' => 'DESC'
 			]
 		);
 
@@ -247,13 +249,13 @@ class Tribe__Events__List_Widget extends WP_Widget {
 	 */
 	protected function default_instance_args( array $instance ) {
 
-		return wp_parse_args( $instance, array(
+		return wp_parse_args( $instance, [
 			'title'                => esc_html__( 'Upcoming Events', 'the-events-calendar' ),
 			'limit'                => '5',
 			'no_upcoming_events'   => false,
 			'featured_events_only' => false,
 			'jsonld_enable'        => true,
-		) );
+		] );
 	}
 
 	/**
